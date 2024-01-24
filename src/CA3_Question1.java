@@ -17,7 +17,9 @@ public class CA3_Question1 {
             driveway.push(i);
         }
 
+        System.out.println("These are the cars currently parked in the driveway: ");
         System.out.println(driveway);
+        System.out.println("Enter your request: ");
 
 //      creating an option for user's input with scanner
         Scanner scanner = new Scanner(System.in);
@@ -26,6 +28,7 @@ public class CA3_Question1 {
 //      push into the stack (park into the driveway)
         if(parkIn > 0 && !driveway.contains(parkIn)){
             driveway.push(parkIn);
+            System.out.println("Your car: " + parkIn + " " + "has been parked in the driveway");
 //      when user enters a negative number, meaning this car plate needs to be removed
         } else {
 //          change this input into a positive number so it can be used to search through the stack
@@ -47,7 +50,9 @@ public class CA3_Question1 {
                     driveway.push(street.pop());
                 }
             }
+            System.out.println("Your car: " + out + " " + "has been removed from the driveway.");
         }
+        System.out.println("Currently parked cars in the driveway are: ");
         System.out.println(driveway);
 
     }
