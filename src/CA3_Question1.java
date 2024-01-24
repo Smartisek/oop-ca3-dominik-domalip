@@ -9,6 +9,7 @@ import java.util.Stack;
 public class CA3_Question1 {
 
     public static void runSimulation(){
+//        creating stacks for the logic, one for parking in driveway and one for parking in street
         Stack<Integer> driveway = new Stack<Integer>();
         Stack<Integer> street = new Stack<Integer>();
 
@@ -25,7 +26,15 @@ public class CA3_Question1 {
         } else {
             int out = parkIn * (-1);
             if(driveway.contains(out)){
-                driveway.pop();
+                while(!driveway.empty()){
+                    int toStreet = driveway.pop();
+                    if(out != toStreet){
+                        street.push(toStreet);
+                    }
+                }
+                while(!street.empty()){
+                    driveway.push(street.pop());
+                }
             }
         }
         System.out.println(driveway);
