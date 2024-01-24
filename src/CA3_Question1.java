@@ -12,11 +12,21 @@ public class CA3_Question1 {
         Stack<Integer> driveway = new Stack<Integer>();
         Stack<Integer> street = new Stack<Integer>();
 
+        for(int i= 1; i <=5; i++){
+            driveway.push(i);
+        }
+
+
         Scanner scanner = new Scanner(System.in);
         int parkIn = scanner.nextInt();
 
-        if(parkIn > 0){
+        if(parkIn > 0 && !driveway.contains(parkIn)){
             driveway.push(parkIn);
+        } else {
+            int out = parkIn * (-1);
+            if(driveway.contains(out)){
+                driveway.pop();
+            }
         }
         System.out.println(driveway);
 
