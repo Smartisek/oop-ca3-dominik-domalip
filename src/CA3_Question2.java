@@ -63,17 +63,42 @@ public class CA3_Question2
 
         while(!cellPair.empty()){
             Cell current = cellPair.pop();
+           int x = current.getX();
+           int y = current.getY();
+           arr[x][y] = count;
+           count++;
+
+           //check north
+            if(x>0 && arr[x-1][y] == 0){
+                cellPair.push(new Cell(x-1, y));
+            }
+            //check east
+            if(y<9 && arr[x][y+1] == 0){
+                cellPair.push(new Cell(x, y+1));
+            }
+            //check south
+            if(x < 9 && arr[x+1][y] == 0){
+                cellPair.push(new Cell(x+1, y));
+            }
+            //check west
+            if(y>0 && arr[x][y-1] == 0){
+                cellPair.push(new Cell(x, y-1));
+            }
         }
     }
 
     public static void start()
     {
         int[][] arr = floodFillStart();
+        fill(2,5, arr);
+
+        display(arr);
 
     }
     public static void main(String[] args) {
-        start();
         display(floodFillStart());
+        System.out.println("\n" + "\n");
+        start();
     }
 
 }
