@@ -23,6 +23,20 @@ public class CA3_Question2
         }
         return arr;
     }
+
+    static class Cell{
+        int x;
+        int y;
+
+        public Cell(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
+
+        public get(){
+
+        }
+    }
     /*
         Helper function to display the image
      */
@@ -39,7 +53,13 @@ public class CA3_Question2
     }
     private static void fill(int r, int c, int[][] arr)
     {
+        Stack <Cell> cellPair = new Stack<Cell>();
+        cellPair.push(new Cell(r, c));
+        int count =0;
 
+        while(!cellPair.empty()){
+            Cell current = cellPair.pop();
+        }
     }
 
     public static void start()
