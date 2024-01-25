@@ -33,8 +33,12 @@ public class CA3_Question2
             this.y = y;
         }
 
-        public get(){
+        public int getX(){
+            return x;
+        }
 
+        public int getY(){
+            return y;
         }
     }
     /*
