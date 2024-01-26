@@ -59,31 +59,36 @@ public class CA3_Question2
     {
         Stack <Cell> cellPair = new Stack<Cell>();
         cellPair.push(new Cell(r, c));
-        int count =0;
+        int count =1;
 
         while(!cellPair.empty()){
             Cell current = cellPair.pop();
-           int x = current.getX();
-           int y = current.getY();
-           arr[x][y] = count;
-           count++;
-
-           //check north
-            if(x>0 && arr[x-1][y] == 0){
+            int x = current.getX();
+            int y = current.getY();
+            arr[x][y] = count;
+            count++;
+//check if it has already been filled
+            //check north
+            if(x>0 && arr[x-1][y] == 0) {
+                arr[x-1][y] = count;
                 cellPair.push(new Cell(x-1, y));
-            }
-            //check east
-            if(y<9 && arr[x][y+1] == 0){
-                cellPair.push(new Cell(x, y+1));
-            }
-            //check south
-            if(x < 9 && arr[x+1][y] == 0){
-                cellPair.push(new Cell(x+1, y));
             }
             //check west
             if(y>0 && arr[x][y-1] == 0){
+                arr[x][y-1] = count;
                 cellPair.push(new Cell(x, y-1));
             }
+            //check south
+            if(x < 9 && arr[x+1][y] == 0){
+                arr[x+1][y] = count;
+                cellPair.push(new Cell(x+1, y));
+            }
+            //check east
+            if(y<9 && arr[x][y+1] == 0){
+                arr[x][y+1] = count;
+                cellPair.push(new Cell(x, y+1));
+            }
+
         }
     }
 
@@ -100,5 +105,4 @@ public class CA3_Question2
         System.out.println("\n" + "\n");
         start();
     }
-
 }
