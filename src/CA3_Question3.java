@@ -27,7 +27,6 @@ public class CA3_Question3
                 String line = scan.nextLine();
                 Scanner lineScan = new Scanner(line);
                 lineScan.useDelimiter(("[^A-Za-z0-9_]+"));
-                lineNumber++;
 
                 while(lineScan.hasNext()){
                     String identifier = lineScan.next();
@@ -35,11 +34,11 @@ public class CA3_Question3
                         identifiersContainer.put(identifier, new ArrayList<>());
                     }
                     identifiersContainer.get(identifier).add(lineNumber);
-
                 }
+                lineNumber++;
             }
                 for(Map.Entry<String, List<Integer>> entry : identifiersContainer.entrySet()){
-                    System.out.println("Identifier: " + entry.getKey() + ", " + "Line: " + lineNumber);
+                    System.out.println("Identifier: " + entry.getKey() + ", " + "Line: " + entry.getValue());
                 }
 
         } catch (IOException e) {
