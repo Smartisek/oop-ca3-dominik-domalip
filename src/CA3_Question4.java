@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
 import java.util.Scanner;
 import java.util.Stack;
 /**
@@ -13,6 +15,15 @@ public class CA3_Question4 {
      */
     public static boolean validate(String filename) throws FileNotFoundException
     {
+        FileReader fileReader = new FileReader(filename);
+        Scanner scanner = new Scanner(fileReader);
+
+        scanner.useDelimiter(" ");
+
+        Stack<String> tags = new Stack<>();
+
+        
+
         return false;
     }
 
@@ -34,5 +45,6 @@ public class CA3_Question4 {
                 System.out.println("This file is invalid");
             }
         }
+
     }
 }
