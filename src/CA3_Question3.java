@@ -8,6 +8,9 @@ import java.util.*;
  *  Class Group: GD2b
  */
 
+// Resources: https://www.youtube.com/watch?v=3RSXHVyzdmg [Nathan S], YouTube video for understanding what delimiter does
+// Using my last project activity tracker for reading a file
+
 public class CA3_Question3
 {
     public static void readFile(String fileName)
