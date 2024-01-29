@@ -20,11 +20,26 @@ public class CA3_Question4 {
 
         scanner.useDelimiter(" ");
 
-        Stack<String> tags = new Stack<>();
+        Stack<String> elements = new Stack<>();
 
-        
+        while(scanner.hasNext()){
+            String tag = scanner.next();
 
-        return false;
+            if(!tag.startsWith("</")){
+                elements.push(tag);
+            } else {
+                String openingTag =  "<" + tag.substring(2);
+                if(elements.contains(openingTag)){
+                    elements.pop();
+//                    System.out.println(elements.pop());
+                }
+            }
+        }
+            if(elements.empty()){
+                return true;
+            } else {
+                return false;
+            }
     }
 
     /*
@@ -36,7 +51,7 @@ public class CA3_Question4 {
 
      */
     public static void main(String[] args) throws FileNotFoundException {
-        String[] files = {"tags_valid.txt", "tags_invalid.txt"};
+        String[] files = {"src/tags_valid.txt", "src/tags_invalid.txt"};
         for(String fName: files) {
             System.out.print(fName +": ");
             if (validate(fName)) {
@@ -45,6 +60,7 @@ public class CA3_Question4 {
                 System.out.println("This file is invalid");
             }
         }
+//        validate("src/tags_valid.txt");
 
     }
 }
