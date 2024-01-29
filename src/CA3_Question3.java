@@ -1,7 +1,8 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
+
 /**
  *  Name:
  *  Class Group:
@@ -18,12 +19,28 @@ public class CA3_Question3
 
             scan.useDelimiter(("[^A-Za-z0-9_]+"));
 
-            while (scan.hasNext()){
-                String identifier = scan.next();
-                System.out.println(identifier);
+            Map<String, List<Integer>> identifiersContainer = new HashMap<>();
+
+            int lineNumber = 1;
+
+            while (scan.hasNextLine()){
+                String line = scan.nextLine();
+                Scanner lineScan = new Scanner(line);
+                lineScan.useDelimiter(("[^A-Za-z0-9_]+"));
+                lineNumber++;
+
+                while(lineScan.hasNext()){
+                    String identifier = lineScan.next();
+                    if(!identifiersContainer.containsKey(identifier)){
+                        identifiersContainer.put(identifier, new ArrayList<>());
+                    }
+                    identifiersContainer.get(identifier).add(lineNumber);
+
+                }
             }
-            scan.close();
-            reader.close();
+                for(Map.Entry<String, List<Integer>> entry : identifiersContainer.entrySet()){
+                    System.out.println("Identifier: " + entry.getKey() + ", " + "Line: " + lineNumber);
+                }
 
         } catch (IOException e) {
             throw new RuntimeException(e);
