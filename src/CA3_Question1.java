@@ -38,7 +38,7 @@ public class CA3_Question1 {
                 while(!driveway.empty()){
 //          variable for removing cars from the driveway
                     int toStreet = driveway.pop();
-//          if the users request doesn't equal the cars plate that is being removed then push that car into the street
+//          if the users request does not equal the cars plate that is being removed then push that car into the street
 //          meaning if the car that is being removed is not the user's, we just move it onto the street
 //          if the car equals user's request, it is just removed completely from the stack (driveway)
                     if(out != toStreet){
