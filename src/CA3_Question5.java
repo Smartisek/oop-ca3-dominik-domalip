@@ -34,8 +34,6 @@ public class CA3_Question5
                 System.out.println("Wrong input.");
             }
         }
-
-
     }
 
 }
