@@ -28,6 +28,10 @@ public class CA3_Question5AirportClass {
             System.out.println("Flight " + takeoff.peek() + " has taken off.");
             takeoff.poll();
         }
+        
+        if(land.isEmpty() || takeoff.isEmpty()){
+            System.out.println("There are no departing or landing flights right now.");
+        }
     }
 
     public void quitSimulation(){

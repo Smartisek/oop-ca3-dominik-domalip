@@ -9,26 +9,30 @@ import java.util.Scanner;
 
 public class CA3_Question5
 {
-
     public static void main(String[] args)
     {
         commandLine();
     }
 
     public static void commandLine(){
-        Queue<String> takeoff = new LinkedList<String>();
-        Queue<String> land = new LinkedList<String>();
+        CA3_Question5AirportClass airport = new CA3_Question5AirportClass();
+
+//        Queue<String> takeoff = new LinkedList<String>();
+//        Queue<String> land = new LinkedList<String>();
 
         Scanner scanner = new Scanner(System.in);
         while(true){
             String userInput = scanner.nextLine();
             if(userInput.startsWith("takeoff")){
-                takeoff.add(userInput.split(" ")[1]);
+                String flightNum = userInput.split(" ")[1];
+                airport.takeoff(flightNum);
             } else if(userInput.startsWith("land")){
-                land.add(userInput.split(" ")[1]);
+                String flightNum = userInput.split(" ")[1];
+                airport.land(flightNum);
             } else if(userInput.startsWith("next")){
-                System.out.println("call function");
+                airport.flightOrganizator();
             } else if(userInput.startsWith("quit")){
+                airport.quitSimulation();
                 break;
             } else {
                 System.out.println("Wrong input.");
