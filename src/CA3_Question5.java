@@ -24,8 +24,14 @@ public class CA3_Question5
             String userInput = scanner.nextLine();
             if(userInput.startsWith("takeoff")){
                 takeoff.add(userInput.split(" ")[1]);
+            } else if(userInput.startsWith("land")){
+                land.add(userInput.split(" ")[1]);
+            } else if(userInput.startsWith("next")){
+                System.out.println("call function");
             } else if(userInput.startsWith("quit")){
                 break;
+            } else {
+                System.out.println("Wrong input.");
             }
         }
 
