@@ -11,7 +11,7 @@ public class CA3_Question4 {
     /*
         filename: tags_valid.txt, tags_invalid.txt
      */
-    public static boolean validate(String filename) throws FileNotFoundException
+    public static boolean validate(String filename) throws FileNotFoundException //if file is not found just cut and throw exception
     {
         FileReader fileReader = new FileReader(filename); //creating a reader that reads a file
         Scanner scanner = new Scanner(fileReader); //scanner for file reader
