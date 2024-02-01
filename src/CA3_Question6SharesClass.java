@@ -12,11 +12,13 @@ class Block{
 
     public int getQuantity(){return quantity;}
 
+    public int setQuantity(int quantityNew){return this.quantity = quantityNew;}
+
     public double getPrice(){return price;}
 
     @Override
     public String toString() {
-        return "CA3_Question6BlockClass{" +
+        return "{" +
                 "quantity=" + quantity +
                 ", price=" + price +
                 '}' + "\n";
@@ -34,10 +36,21 @@ public class CA3_Question6SharesClass {
         while(quantityToSell > 0 && !queue.isEmpty()){
             Block currentQuantity = queue.peek();
 
-            if(currentQuantity.getQuantity() >= quantityToSell){
+            if(currentQuantity.getQuantity() <= quantityToSell){
                 quantityToSell -= currentQuantity.getQuantity();
                 queue.poll();
+            } else {
+                int currentMinusToSell = currentQuantity.getQuantity();
+                currentMinusToSell -= quantityToSell;
+                currentQuantity.setQuantity(currentMinusToSell);
+                quantityToSell = 0;
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "shares" +
+                  queue;
     }
 }

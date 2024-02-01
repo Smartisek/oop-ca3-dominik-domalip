@@ -17,28 +17,27 @@ public class CA3_Question6
     quit
      */
     public static void main(String[] args) {
-        
+        CA3_Question6SharesClass shares = new CA3_Question6SharesClass();
         Scanner in = new Scanner(System.in);
         String command="";
         do {
             System.out.print(">");
-            CA3_Question6SharesClass sharesFunctions = new CA3_Question6SharesClass();
             command = in.next();
             if(command.equalsIgnoreCase("buy"))
             {
                 int qty = in.nextInt();
                 double price = in.nextDouble();
-               sharesFunctions.buy(qty, price);
+               shares.buy(qty, price);
             }
             else if(command.equals("sell"))
             {
                 int qty = in.nextInt();
 //                double sellPrice = in.nextDouble();
-                sharesFunctions.sell(qty);
-                System.out.println(sharesFunctions);
+                shares.sell(qty);
+                System.out.println(shares);
 
             } else if(command.equals("peek")){
-                System.out.println(sharesFunctions);
+                System.out.println(shares.toString());
 
             }
         }while(!command.equalsIgnoreCase("quit"));
