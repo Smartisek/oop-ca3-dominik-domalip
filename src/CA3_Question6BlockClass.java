@@ -9,4 +9,10 @@ public class CA3_Question6BlockClass {
          this.company = company;
     }
 
+    public int getQuantity(){return quantity;}
+
+    public double getPrice(){return price;}
+
+    public String getCompany(){return company;}
+
 }
