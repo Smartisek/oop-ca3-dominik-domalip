@@ -15,4 +15,12 @@ public class CA3_Question6BlockClass {
 
     public String getCompany(){return company;}
 
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "quantity=" + quantity +
+                ", price=" + price +
+                ", company='" + company + '\'' +
+                '}';
+    }
 }

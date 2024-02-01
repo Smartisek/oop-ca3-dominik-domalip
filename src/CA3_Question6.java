@@ -31,6 +31,7 @@ public class CA3_Question6
                 double price = in.nextDouble();
                 String stockName = in.next();
                 CA3_Question6BlockClass stock = new CA3_Question6BlockClass(qty, price, stockName);
+                shares.add(stock);
             }
             else if(command.equals("sell"))
             {
@@ -38,6 +39,7 @@ public class CA3_Question6
                 double price = in.nextDouble();
             } else if(command.equals("peek")){
                 System.out.println(shares);
+                shares.peek();
             }
         }while(!command.equalsIgnoreCase("quit"));
     }
