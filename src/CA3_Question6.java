@@ -17,37 +17,31 @@ public class CA3_Question6
     quit
      */
     public static void main(String[] args) {
-
-        Queue<CA3_Question6BlockClass> shares = new LinkedList<>();
-
+        
         Scanner in = new Scanner(System.in);
         String command="";
         do {
             System.out.print(">");
+            CA3_Question6SharesClass sharesFunctions = new CA3_Question6SharesClass();
             command = in.next();
             if(command.equalsIgnoreCase("buy"))
             {
                 int qty = in.nextInt();
                 double price = in.nextDouble();
-                CA3_Question6BlockClass stock = new CA3_Question6BlockClass(qty, price);
-                shares.add(stock);
+               sharesFunctions.buy(qty, price);
             }
             else if(command.equals("sell"))
             {
                 int qty = in.nextInt();
 //                double sellPrice = in.nextDouble();
-               while(qty > 0 && !shares.isEmpty()){
-                   int currentQuantity = shares.peek().getQuantity();
-                   currentQuantity -= qty;
-                   if(currentQuantity == 0){
-                       shares.poll();
-                   }
-               }
+                sharesFunctions.sell(qty);
+                System.out.println(sharesFunctions);
 
             } else if(command.equals("peek")){
-                System.out.println(shares);
+                System.out.println(sharesFunctions);
 
             }
         }while(!command.equalsIgnoreCase("quit"));
     }
+
 }
