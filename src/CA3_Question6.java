@@ -32,9 +32,8 @@ public class CA3_Question6
             else if(command.equals("sell"))
             {
                 int qty = in.nextInt();
-//                double sellPrice = in.nextDouble();
-                shares.sell(qty);
-                System.out.println(shares);
+                double sellPrice = in.nextDouble();
+                shares.sell(qty, sellPrice);
 
             } else if(command.equals("peek")){
                 System.out.println(shares.toString());

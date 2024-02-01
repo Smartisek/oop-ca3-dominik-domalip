@@ -32,20 +32,25 @@ public class CA3_Question6SharesClass {
         queue.add(new Block(quantity, price));
     }
 
-    void sell(int quantityToSell){
+    void sell(int quantityToSell, double sellPrice){
+              double profit = 0.00;
         while(quantityToSell > 0 && !queue.isEmpty()){
-            Block currentQuantity = queue.peek();
+            Block peek = queue.peek();
 
-            if(currentQuantity.getQuantity() <= quantityToSell){
-                quantityToSell -= currentQuantity.getQuantity();
+            if(peek.getQuantity() <= quantityToSell){
+                quantityToSell -= peek.getQuantity();
+                profit += peek.getQuantity() * (sellPrice - peek.getPrice());
                 queue.poll();
             } else {
-                int currentMinusToSell = currentQuantity.getQuantity();
+                int currentMinusToSell = peek.getQuantity();
                 currentMinusToSell -= quantityToSell;
-                currentQuantity.setQuantity(currentMinusToSell);
+                peek.setQuantity(currentMinusToSell);
+
+                profit += peek.getQuantity() * (sellPrice - peek.getPrice());
                 quantityToSell = 0;
             }
         }
+        System.out.println("Profit is " + profit);
     }
 
     @Override
