@@ -29,17 +29,24 @@ public class CA3_Question6
             {
                 int qty = in.nextInt();
                 double price = in.nextDouble();
-                String stockName = in.next();
-                CA3_Question6BlockClass stock = new CA3_Question6BlockClass(qty, price, stockName);
+                CA3_Question6BlockClass stock = new CA3_Question6BlockClass(qty, price);
                 shares.add(stock);
             }
             else if(command.equals("sell"))
             {
                 int qty = in.nextInt();
-                double price = in.nextDouble();
+//                double sellPrice = in.nextDouble();
+               while(qty > 0 && !shares.isEmpty()){
+                   int currentQuantity = shares.peek().getQuantity();
+                   currentQuantity -= qty;
+                   if(currentQuantity == 0){
+                       shares.poll();
+                   }
+               }
+
             } else if(command.equals("peek")){
                 System.out.println(shares);
-                shares.peek();
+
             }
         }while(!command.equalsIgnoreCase("quit"));
     }
