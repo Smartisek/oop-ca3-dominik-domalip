@@ -17,7 +17,7 @@ public class CA3_Question6
     quit
      */
     public static void main(String[] args) {
-        CA3_Question6SharesClass shares = new CA3_Question6SharesClass();
+        CA3_Question6SharesClass shares = new CA3_Question6SharesClass(); //creating an instance of shares class to access its functions and create the queue
         Scanner in = new Scanner(System.in);
         String command="";
         do {

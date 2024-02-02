@@ -35,7 +35,6 @@ public class CA3_Question7
                 // Code to sell shares and calculate profit here
             }
             else if(command.equals("peek")){
-                System.out.println(shares);
             }
         }while(!command.equalsIgnoreCase("quit"));
     }
