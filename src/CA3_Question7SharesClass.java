@@ -17,6 +17,14 @@ import java.util.Queue;
         public int setQuantity(int quantityNew){return this.quantity = quantityNew;}
 
         public double getPrice(){return price;}
+
+        @Override
+        public String toString() {
+            return "{" +
+                    "quantity=" + quantity +
+                    ", price=" + price +
+                    '}' + '\n';
+        }
     }
 
 public class CA3_Question7SharesClass{
@@ -33,4 +41,10 @@ public class CA3_Question7SharesClass{
             stock.get(company).add(pie);
         }
 
+    @Override
+    public String toString() {
+        return "{" +
+                 stock +
+                '}';
+    }
 }
