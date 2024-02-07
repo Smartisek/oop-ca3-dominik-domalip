@@ -33,12 +33,33 @@ public class CA3_Question7SharesClass{
             this.stock = new HashMap<>();
         }
 
+
+
         public void buy(String company, int quantity, double price){
             Pie pie = new Pie(quantity, price);
             if(!stock.containsKey(company)){
                 stock.put(company, new LinkedList<>());
             }
-            stock.get(company).add(pie);
+            stock.get(company).add(pie); // if already in add new pie to the company
+        }
+
+        public void sell(String company, int quantityToSell, double sellPrice){
+        Queue <Pie> pies = stock.get(company);
+        double totalGain = 0;
+            while(quantityToSell > 0 && !stock.isEmpty()){
+                if(pies.peek().getQuantity() <= quantityToSell){
+                    quantityToSell -= pies.peek().getQuantity();
+                    totalGain += pies.peek().getQuantity() * (sellPrice - pies.peek().getPrice());
+                    Pie pieSell = pies.poll();
+                } else {
+                    int currentMinusToSell = pies.peek().getQuantity();
+                    currentMinusToSell -= quantityToSell;
+                    pies.peek().setQuantity(currentMinusToSell);
+                    totalGain += pies.peek().getQuantity() * (sellPrice - pies.peek().getPrice());
+                    quantityToSell = 0;
+                }
+            }
+            System.out.println("Profit for selling " + stock.get(company) + " at price " + sellPrice + " is " + totalGain);
         }
 
     @Override

@@ -33,7 +33,7 @@ public class CA3_Question7
                 String company = in.next();
                 int qty = in.nextInt();
                 double price = in.nextDouble();
-                // Code to sell shares and calculate profit here
+                shares.sell(company, qty, price);
             }
             else if(command.equals("peek")){
                 System.out.println(shares.toString());
