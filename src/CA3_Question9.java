@@ -27,7 +27,7 @@ public class CA3_Question9
     }
 
     public static void main(String[] args) {
-        int[][] image = new int[][]{{1, 2, 3, 15}, {4, 5, 6, 15}, {7, 8, 9, 15}};
+        int[][] image = new int[][]{{1, 1, 1, 1, 1}, {1, 0, 0, 0, 1}, {1, 1, 1, 0, 1}, {-99, 0, 0, 0, 1}, {1, 0, 0, 0, 1}, {1, 1, 1, 1, 1}};
         display(image);
     }
 
