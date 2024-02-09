@@ -1,6 +1,9 @@
+import java.util.Stack;
+
+
 /**
- *  Name:
- *  Class Group:
+ *  Name: Dominik Domalip
+ *  Class Group:  GD2b
  */
 
 /*
@@ -23,11 +26,12 @@ public class CA3_Question9
     }
     public void solve(int x, int y, DIRECTION dir)
     {
+        Stack<DIRECTION> directions = new Stack<>();
 
     }
 
     public static void main(String[] args) {
-        int[][] image = new int[][]{{1, 1, 1, 1, 1}, {1, 0, 0, 0, 1}, {1, 1, 1, 0, 1}, {-99, 0, 0, 0, 1}, {1, 0, 0, 0, 1}, {1, 1, 1, 1, 1}};
+        int[][] image = new int[][]{{1, 1, 1, 1, 1}, {1, 0, 0, 0, 1}, {1, 1, 0, 0, 1}, {-99, 0, 0, 0, 1}, {1, 0, 0, 0, 1}, {1, 1, 1, 1, 1}};
         display(image);
     }
 

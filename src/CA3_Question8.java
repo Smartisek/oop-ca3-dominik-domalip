@@ -17,10 +17,12 @@ public class CA3_Question8 {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter equation");
         equation = in.nextLine().trim();
-        System.out.println(equation);
 
-
-
-
+        for(char ch : equation.toCharArray()){
+            if(Character.isDigit(ch)){
+                numbers.push(Character.getNumericValue(ch));
+            }
+        }
+        System.out.println(numbers);
     }
 }
