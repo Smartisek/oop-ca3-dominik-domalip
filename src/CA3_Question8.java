@@ -12,21 +12,14 @@ public class CA3_Question8 {
     public static void main(String[] args) {
         String equation;
         Stack<Integer> numbers = new Stack<>();
-//        Stack<Character> operator = new Stack<>();
+        Stack<Character> operator = new Stack<>();
+        CA3_Question8Calculator calculator = new CA3_Question8Calculator();
 
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter equation");
         equation = in.nextLine().trim();
+        int result = calculator.calculate(equation);
+        System.out.println(result);
 
-        for(char ch : equation.toCharArray()){
-            if(Character.isDigit(ch)){
-                numbers.push(Character.getNumericValue(ch));
-            } else
-                if(ch == '+'){
-                    int arg = numbers.pop();
-                    numbers.push(numbers.pop() + arg);
-                }
-        }
-        System.out.println(numbers);
     }
 }

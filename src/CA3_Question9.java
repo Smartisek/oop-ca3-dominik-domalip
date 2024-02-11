@@ -1,5 +1,5 @@
 import java.util.Stack;
-// I had no idea how to start on this with the enums and i had some help from my friend who already works with java 
+// ********* I had no idea how to start on this with the enums and i had some help from my friend who already works with java ************
 
 /**
  *  Name: Dominik Domalip
