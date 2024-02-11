@@ -20,6 +20,6 @@ public class CA3_Question8 {
         equation = in.nextLine().trim();
         int result = calculator.calculate(equation);
         System.out.println(result);
-
+//   3*(4+5)
     }
 }
