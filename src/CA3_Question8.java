@@ -12,7 +12,7 @@ public class CA3_Question8 {
     public static void main(String[] args) {
         String equation;
         Stack<Integer> numbers = new Stack<>();
-        Stack<Character> operator = new Stack<>();
+//        Stack<Character> operator = new Stack<>();
 
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter equation");
@@ -21,7 +21,11 @@ public class CA3_Question8 {
         for(char ch : equation.toCharArray()){
             if(Character.isDigit(ch)){
                 numbers.push(Character.getNumericValue(ch));
-            }
+            } else
+                if(ch == '+'){
+                    int arg = numbers.pop();
+                    numbers.push(numbers.pop() + arg);
+                }
         }
         System.out.println(numbers);
     }

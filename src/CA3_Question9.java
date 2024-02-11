@@ -9,7 +9,22 @@ import java.util.Stack;
 /*
 Direction enum used to indicate direction.
  */
-enum DIRECTION {NORTH, SOUTH,EAST,WEST};
+enum DIRECTION {
+    NORTH (-1,0),
+    SOUTH (1, 0),
+    EAST (0, 1),
+    WEST (0, -1);
+    private final int dx;
+    private final int dy;
+
+    DIRECTION(int dx, int dy) {
+        this.dx = dx;
+        this.dy = dy;
+    }
+
+    public int getX(){return dx;}
+    public int getY(){return dy;}
+}
 
 public class CA3_Question9
 {
